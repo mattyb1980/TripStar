@@ -11,8 +11,6 @@
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-		
-		<script src="https://maps.googleapis.com/maps/api/geocode/json?address=&key=AIzaSyB9Nvofo-afipjBXoaO4g_hoyDMsIZqUiE"></script>
 
 	    <script data-cfasync="false" data-tockify-script="embed" src="https://public.tockify.com/browser/embed.js"></script>
 	    
@@ -79,11 +77,10 @@
 					<img src="assets/images/select-city.png" class="icons">
 				</div>
 			</div>
-			<div class="row">
-					<div class="co-md-10">
-						<div id="map">My map will go here</div>
-					</div>
+			<div class="row">				
+				<div id="map">My map will go here</div>
 			</div>
+
 			<div class="row">
 				<div class="col-md-5" id="calendarDiv">
 					<div data-tockify-component="calendar" data-tockify-calendar="travelstar"></div>
@@ -104,6 +101,8 @@
 
 
 		<script src="assets/javascript/logic.js"></script>
+		
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBruPrhe8HN7NvUbVyLZal6CmRG5uIRzrM&callback=initMap"></script>
 
 	</body>
 </html>
