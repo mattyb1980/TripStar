@@ -12,6 +12,9 @@
   
   firebase.initializeApp(config);
 
+
+  
+
   // GoogleMaps apiKey
   // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyB9Nvofo-afipjBXoaO4g_hoyDMsIZqUiE
 	function initAutocomplete() {
