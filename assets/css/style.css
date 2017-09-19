@@ -32,6 +32,7 @@ html, body {
     border-radius: 0px;
 }
 
+
 #mainForm {
 	background-color: #eee;
 	padding: 20px 10px 50px 10px;
@@ -73,8 +74,8 @@ html, body {
 }
 
 .icons {
-	width: 100%;
-	float: left;
+	width: 50%;
+	margin: 100px;
 }
 
 #optionsDiv {
