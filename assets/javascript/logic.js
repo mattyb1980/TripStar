@@ -12,8 +12,33 @@
   
   firebase.initializeApp(config);
 
+  function findPos(obj) {
+    var curtop = 0;
+    if (obj.offsetParent) {
+        do {
+            curtop += obj.offsetTop;
+        } while (obj = obj.offsetParent);
+    return [curtop];
+    }
+  }
 
-  
+  $("#searchBtn").click(function(event){
+    event.preventDefault();
+    var city = $("#city").val();
+    var state = $("#state").val();
+    $("#pac-input").val(city + " " + state);
+
+    // var e = jQuery.Event("keypress", 13);
+    // $("#pac-input").trigger(e);
+    var input = document.getElementById('pac-input');
+    google.maps.event.trigger(input, 'focus')
+    google.maps.event.trigger(input, 'keydown', {
+        keyCode: 13
+    });
+    // var searchBox = new google.maps.places.SearchBox(input);
+    window.scroll(0,findPos(document.getElementById("map")));
+    // google.maps.event.trigger(searchBox, 'place_changed');
+  })
 
   // GoogleMaps apiKey
   // https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyB9Nvofo-afipjBXoaO4g_hoyDMsIZqUiE
