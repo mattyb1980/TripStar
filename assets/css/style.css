@@ -27,6 +27,7 @@ h3 {
 #headerImage { 
     /* The image used */
     background-image: url("../images/hotel.jpg");
+    border-radius: 0px;
 
     /* Set a specific height */
     height: 350px; 
@@ -62,10 +63,11 @@ h3 {
     background-size: cover;
 }
 
-.container .jumbotron, .container-fluid, .jumbotron {
+.container, .jumbotron, .container-fluid, .jumbotron, #eventbriteCol {
     padding-right: 0px;
     padding-left: 0px;
     border-radius: 0px;
+    text-align: center;
 }
 
 #iconDiv {
@@ -110,11 +112,18 @@ h3 {
 
 #map {
     height: 100%;
+    margin-bottom: 30px;
 }
+
 #description {
 	font-family: Roboto;
 	font-size: 15px;
 	font-weight: 300;
+}
+
+#midMessage {
+	color: white;
+	margin-top: 70px;
 }
 
 #infowindow-content .title {
