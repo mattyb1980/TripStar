@@ -1,6 +1,6 @@
 
 
-  // Initialize Firebase
+  /* Initialize Firebase
   var config = {
    apiKey: "AIzaSyAJt3fgxtDdHMSi3D_UVm-AGh7--BUX-lU",
    authDomain: "tripstar-1505508268662.firebaseapp.com",
@@ -30,7 +30,7 @@
     var credential = error.credential;
   // ...
   });
-
+ */
 
   function findPos(obj) {
     var curtop = 0;
@@ -58,6 +58,9 @@
     // var searchBox = new google.maps.places.SearchBox(input);
     window.scroll(0,findPos(document.getElementById("map")));
     // google.maps.event.trigger(searchBox, 'place_changed');
+
+    //calling the Event Brite function
+    populateEventBrite();
   })
 
   // GoogleMaps apiKey
@@ -128,4 +131,71 @@
           map.fitBounds(bounds);
         });
       }
+
+      // This is where the #eventBriteDiv space is reserved for Event Brite to populate its material per inputs transferred to the API query.
+
+      // #pac-input = location
+
+      // initializing the variables
+      
+
+
+      function populateEventBrite() {
+        var location = document.getElementById("city").value +"%2c"+ document.getElementById("state").value;
+       // var location = spot.replace(/\s+/g, "");
+        console.log(location);
+        var arrival = document.getElementById("arrival").value;
+        console.log(arrival);
+
+
+
+        //var arrival = (moment(document.getElementById("arrival")).format("YYYY-MM-DD")) + "T07:00:00";
+
+        var queryUrl = "https://www.eventbriteapi.com/v3/events/search/?token=ZA2MIRZYEOEAA2YQBJNE&location.address="
+                        + location + "&start_date.range_start=" + arrival + "T07%3A00%3A00" 
+        console.log(queryUrl);
+        //music,fitness,food,bars,art,museums&" + 
+        // + location + arrival + "&page=1"
+        //"&q=" + arrival + 
+        
+
+        var events = $("#eventbriteDiv");
+        //events.html("<i>Loading events, please stand by...</i>");
+
+          $.ajax({
+          url: queryUrl,
+          method: "GET"
+        })
+          
+         .done(function(response) {
+          console.log(queryUrl);
+          console.log("response")
+          console.log(response);
+
+            if(response.events.length) {
+                var detail = "";
+                for (var i=0; i<response.events.length; i++) {
+                     var event = response.events[i];
+                     var eventTime = moment(event.start.local).format('MM/DD/YYYY hh:mm A');
+                    console.dir(event);
+                 
+                    detail += "<div class='eventList'>";
+                    detail += "<h2><a href='" + event.url + "'>" + event.name.text + "</a></h2>";
+                //  detail += "<p><b>Location: " + event.venue.address.address_1 + "</b><br/>";
+                    detail += "<b>Date/Time: " + eventTime + "</b></p>";
+                    
+                    detail += "<p>" + event.description.text + "</p>";
+                    detail += "</div>";
+                }
+
+                events.html(detail);
+            } else {
+                events.html("<p>Sorry, there are no upcoming events.</p>");
+            }
+          });
+        };
+
+        
+          
+    
 	
