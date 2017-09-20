@@ -9,6 +9,13 @@ h3 {
   text-align: center;
 }
 
+
+#navLogo {
+	width: 20%;
+	margin-left: 20px;
+	margin-top: 0px;
+}
+
 .navbar {
 	background-color: #02779E;
 	margin-bottom: 0px;
@@ -17,12 +24,12 @@ h3 {
 	height: 70px;
 }
 
-.jumbotron { 
+#headerImage { 
     /* The image used */
-    background-image: url("../images/mountains.jpg");
+    background-image: url("../images/hotel.jpg");
 
     /* Set a specific height */
-    height: 400px; 
+    height: 350px; 
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -31,21 +38,54 @@ h3 {
     background-size: cover;
 }
 
-.container .jumbotron, .container-fluid .jumbotron {
+#mainForm {
+	background-color: #ffffff;
+	padding: 20px 10px 50px 10px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 150px;
+	width: 	900px;
+	box-shadow: 0px 5px 10px #888888;
+}
+
+#middleImage { 
+    /* The image used */
+    background-image: url("../images/cocktail.jpg");
+
+    /* Set a specific height */
+    height: 300px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container .jumbotron, .container-fluid, .jumbotron {
     padding-right: 0px;
     padding-left: 0px;
     border-radius: 0px;
 }
 
-
-#mainForm {
-	background-color: #eee;
-	padding: 20px 10px 50px 10px;
+#iconDiv {
 	text-align: center;
-	margin: 0 auto;
-	margin-top: 200px;
-	width: 	800px;
-	box-shadow: 0px 5px 10px #888888;
+}
+
+.icons {
+	width: 30%;
+	margin-top: 80px;
+}
+
+.icons1 {
+	width: 40%;
+	margin-top: 100px;
+}
+
+.iconText {
+	margin-top :20px;
+	margin-bottom: 125px;
+	color: #FF9900;
 }
 
 #formHeader {
@@ -55,35 +95,11 @@ h3 {
 	font-weight: 300;
 }
 
-.container {
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-#iconsRow {
-	height: 100px;
-}
-
-.container-fluid {
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-#navLogo {
-	width: 20%;
-	margin-left: 20px;
-	margin-top: 0px;
-}
 
 #calendarDiv {
 	height: 600px;
 	background-color: #eee;
 	margin-top: 20px;
-}
-
-.icons {
-	width: 50%;
-	margin: 100px;
 }
 
 #optionsDiv {

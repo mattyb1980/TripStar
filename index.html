@@ -54,7 +54,7 @@
 		  </div>
 		</nav>
 		<div class="container-fluid">
-			<div class="jumbotron">
+			<div class="jumbotron" id="headerImage">
 				<div id="mainForm">
 					<h2 id="formHeader">Start planning your next 5 star trip</h2>
 					<form class="form-inline">
@@ -81,38 +81,44 @@
 			</div>
 		</div>
 		<div class="container">	
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-			<div class="row" id="iconsRow">
-				<div class="col-md-4">
-					<img src="assets/images/select-city.png" class="icons">
-					<h3>Search Your Location</h3>
+    		<div class="row" id="iconsRow">
+				<div class="col-md-4" id="iconDiv">
+					<img src="assets/images/mapit.png" class="icons">
+					<h3 class="iconText">Search Your Location</h3>
 				</div>
-				<div class="col-md-4">
-					<img src="assets/images/select-city.png" class="icons">
-					<h3>Browse Events</h3>
+				<div class="col-md-4" id="iconDiv">
+					<img src="assets/images/dateit.png" class="icons">
+					<h3 class="iconText">Pick Your Date</h3>
 				</div>
-				<div class="col-md-4">
-					<img src="assets/images/select-city.png" class="icons">
-					<h3>Have An Amazing Time</h3>
+				<div class="col-md-4" id="iconDiv">
+					<img src="assets/images/searchit.png" class="icons1">
+					<h3 class="iconText">Start Your Search</h3>
 				</div>
-      </div>
-    </div>
 			</div>
-			<div class="row">				
-				<!-- <h3>My Google Maps Demo Here</h3> <-</-->
+		</div>				
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="jumbotron" id="middleImage">
+					<h1 id="midMessage">You Deserve A Break</h1>
+				</div>
+			</div>
+		</div>	
+		<div class="container">
+			<div class="row">
 				<div id="mapAnchor">
 					<input id="pac-input" class="controls" type="text" placeholder="Search Box">
-				    <div id="map"></div>
+				   <div id="map"></div>
 				</div>
-				    
-			</div>
+			</div>	    
+		</div>
 
+		<div class="container">
 			<div class="row">
-				<div class="col-md-5" id="calendarDiv">
-					<div data-tockify-component="calendar" data-tockify-calendar="travelstar"></div>
+				<div class="col-md-6" id="calendarDiv">
+					
 				</div>
-				<div class="col-md-7" id="optionsDiv">					
+				<div class="col-md-6" id="optionsDiv">					
 				</div>
 				
 			</div>
