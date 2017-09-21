@@ -60,7 +60,7 @@
     // google.maps.event.trigger(searchBox, 'place_changed');
 
     //calling the Event Brite function
-    populateEventBrite();
+    populateEventbrite();
   })
 
   // GoogleMaps apiKey
@@ -87,7 +87,7 @@
         // more details for that place.
         searchBox.addListener('places_changed', function() {
           var places = searchBox.getPlaces();
-
+          console.log(places);
           if (places.length == 0) {
             return;
           }
@@ -100,6 +100,7 @@
 
           // For each place, get the icon, name and location.
           var bounds = new google.maps.LatLngBounds();
+          console.log(bounds);
           places.forEach(function(place) {
             if (!place.geometry) {
               console.log("Returned place contains no geometry");
@@ -130,23 +131,17 @@
           });
           map.fitBounds(bounds);
         });
-      }
-
-      // This is where the #eventBriteDiv space is reserved for Event Brite to populate its material per inputs transferred to the API query.
-
-      // #pac-input = location
-
-      // initializing the variables
-      
+      } // initAutocomplete Function Closure
 
 
-      function populateEventBrite() {
+      // This is where the #eventbriteDiv space is reserved for Event Brite to populate its material per inputs transferred to the API query.
+
+      function populateEventbrite() {
         var location = document.getElementById("city").value +"%2c"+ document.getElementById("state").value;
        // var location = spot.replace(/\s+/g, "");
         console.log(location);
         var arrival = document.getElementById("arrival").value;
         console.log(arrival);
-
 
 
         //var arrival = (moment(document.getElementById("arrival")).format("YYYY-MM-DD")) + "T07:00:00";
@@ -177,23 +172,26 @@
                 for (var i=0; i<response.events.length; i++) {
                      var event = response.events[i];
                      var eventTime = moment(event.start.local).format('MM/DD/YYYY hh:mm A');
-                    console.dir(event);
-                 
-                    detail += "<div class='eventList'>";
+                   
+                    detail += "<div class='container'>";
                     detail += "<h2><a href='" + event.url + "'>" + event.name.text + "</a></h2>";
                 //  detail += "<p><b>Location: " + event.venue.address.address_1 + "</b><br/>";
                     detail += "<b>Date/Time: " + eventTime + "</b></p>";
-                    
+                    detail += "<div class='panel panel-default'>";
+                    detail += "<div class= 'panel-body'>";
                     detail += "<p>" + event.description.text + "</p>";
                     detail += "</div>";
+                    detail += "</div>";
+                    detail += "</div>";
                 }
-
                 events.html(detail);
+
             } else {
                 events.html("<p>Sorry, there are no upcoming events.</p>");
-            }
+              };
           });
         };
+        
 
         
           
